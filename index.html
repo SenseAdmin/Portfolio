@@ -9,14 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="img/head-img.png">
+    
 </head>
 <body>
+
+    <script src="script.js"></script>
+
+    <div class="loading-overlay">
+       
+
+            <div class="progress">
+                <div class="progressBar"></div>
+                <img src="https://media1.tenor.com/m/BZaWjKzYBLQAAAAd/racoon-raccoon.gif" alt="GIF Animation" class="gifImage">
+            </div>
+        
+        
+    </div>
+
 
     <header class="header">
         <div class="page">
             <div class="header-inner">
 
-                <img src="img/logotip.png" alt="" class="logotip">
+                <img src="img/logotip.png" alt="" class="logotip" onclick="location='index.html'">
 
                 <button class="header-btn">
                     <p>НАПИСАТЬ</p>
@@ -45,24 +60,53 @@
             <div class="predloz">
                 <div class="vibor">
 
-                    <div class="site">
+                    <div class="site item">
                         <p>САЙТЫ</p>
                     </div>
 
-                    <div class="app">
+                    <div class="app item">
                         <p>ПРИЛОЖЕНИЯ</p>
                     </div>
 
-                    <div class="lending">
+                    <div class="lending item">
                         <p>ЛЕНДИНГИ</p>
                     </div>
 
                 </div>
 
-                <h1 class="predloz-title">Сайты и веб-сервисы
+                <h1 class="predloz-title item">Сайты и веб-сервисы
                     с впечатляющи дизайном</h1>
-                <p class="predloz-text">наши заказчики — наши партнёры, с которыми мы вместе улучшаем продукт через визуальную коммуникацию</p>
-                <p class="predloz-text">сочетаем проверенные стратегии, глубокую аналитику и креативные концепции, художественный подход, нестандартные решения</p>
+                <p class="predloz-text item">наши заказчики — наши партнёры, с которыми мы вместе улучшаем продукт через визуальную коммуникацию</p>
+                <p class="predloz-text item">сочетаем проверенные стратегии, глубокую аналитику и креативные концепции, художественный подход, нестандартные решения</p>
+                <script>
+                    const items = document.querySelectorAll('.item');
+                
+                    const isInViewport = (element) => {
+                      const rect = element.getBoundingClientRect();
+                      return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                      );
+                    };
+                
+                    const handleScroll = () => {
+                      items.forEach((item, index) => {
+                        if (isInViewport(item)) {
+                          // Задержка для каждого элемента
+                          setTimeout(() => {
+                            item.classList.add('show');
+                          }, index * 500); // 500 мс задержки для каждого элемента
+                        }
+                      });
+                    };
+                
+                    window.addEventListener('scroll', handleScroll);
+                
+                    // Запускаем анимацию при загрузке страницы
+                    handleScroll();
+                  </script>
             </div>
         </div>
         <div class="stages">
