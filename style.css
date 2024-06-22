@@ -196,16 +196,18 @@ body {
     justify-content: space-between;
 
     width: 100%;
+    height: 420px;
 }
 
 .stage {
-    width: 24%;
+    width: 23%;
     height: 420px;
     padding: 24px 18px 0 24px;
     text-align: left;
 
     border-radius: 15px;
-    position: relative;
+    position: absolute;
+    transform: translateX(155%);
 }
 
 .stage-title {
@@ -257,18 +259,25 @@ body {
 
 .stage1 {
     background-color: #8A9DFF;
+    z-index: 4;
+    transform: translateX(135%);
 }
 
 .stage2 {
     background-color: #0EE83D;
+    z-index: 3;
+    transform: translateX(145%);
 }
 
 .stage3 {
     background-color: #FC6AFF;
+    z-index: 2;
 }
 
 .stage4 {
     background-color: #25E4B7;
+    z-index: 1;
+    transform: translateX(165%);
 }
 
 
@@ -458,6 +467,33 @@ body {
     }
 }
 
+@media (max-width: 1040px) {
+    .stage-container {
+        height: 856px;
+    }
+
+    .stage {
+        position: relative;
+    }
+
+    .stage1 {
+        transform: translateX(100px) translateY(100px);
+    }
+
+    .stage2 {
+        transform: translateX(-100px) translateY(100px);
+    }
+
+    .stage3  {
+        transform: translateX(100px) translateY(-100px);
+    }
+
+    .stage4 {
+        transform: translateX(-100px) translateY(-100px);
+        z-index: 5;
+    }
+}
+
 @media (max-width: 1000px) {
     .line {
         display: none;
@@ -475,9 +511,30 @@ body {
     }
 }
 
+@media (max-width: 780px) {
+
+    .text-container {
+        display: block;
+    }
+
+    .abzaz1 {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .abzaz2 {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
 @media (max-width: 650px) {
     .opisanie {
         width: 85%;
+    }
+
+    .stage-container {
+        height: 1775px;
     }
 
     .stage {
@@ -530,6 +587,7 @@ body {
 
     .vibor {
         overflow-x: scroll;
+        overflow-y: hidden;
     }
 
     .vibor::-webkit-scrollbar {
@@ -616,7 +674,7 @@ body {
     display: flex;
     z-index: 9999;
   }
-  
+
   .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
@@ -625,7 +683,7 @@ body {
     height: 120px;
     animation: spin 2s linear infinite;
   }
-  
+
 
 
 
@@ -642,7 +700,7 @@ body {
       background-color: #16a085; /* конечный цвет */
     }
   }
-  
+
   .progress {
     text-align: center;
     width: 100%;
@@ -669,4 +727,28 @@ body {
 
 
 
-ы
+
+.rect {
+
+    transition: transform .8s ease-in-out;
+  }
+
+  .rect.rotate-left {
+    transform-origin: 50% 100%;
+    transform: rotate(-45deg) translateX(-100px);
+  }
+
+  .rect.rotate-right {
+    transform-origin: 50% 100%;
+    transform: rotate(45deg) translateX(-100px);
+  }
+
+  .rect.move-left {
+    transform: translateX(-200px);
+  }
+
+  .rect.move-right {
+    transform: translateX(-200px);
+  }
+
+
