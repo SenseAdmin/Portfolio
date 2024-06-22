@@ -205,8 +205,8 @@ body {
 
 .stage-inner {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 1%;
     text-decoration: none;
     opacity: 0;
 
