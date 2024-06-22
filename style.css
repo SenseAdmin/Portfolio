@@ -153,6 +153,17 @@ body {
     border-right: 1px #fff solid;
 }
 
+.item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .item.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 .predloz-title {
     font-size: 48px;
     font-weight: 800;
@@ -205,12 +216,12 @@ body {
 
 .stage-inner {
     display: block;
-    width: 85%;
-    height: 1%;
+    width: 100%;
+    height: 85%;
     text-decoration: none;
     opacity: 0;
 
-    transition: all .2s;
+    transition: all .8s;
 }
 
 .stage-inner:hover {
@@ -585,3 +596,77 @@ body {
         padding: 18px 19px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    z-index: 9999;
+  }
+  
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+
+
+
+
+
+
+@keyframes fillProgress {
+    0% {
+      width: 0;
+      background-color: #ff6b6b; /* начальный цвет */
+    }
+    100% {
+      width: 100%;
+      background-color: #16a085; /* конечный цвет */
+    }
+  }
+  
+  .progress {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 8%;
+    background-color: #000;
+  }
+
+  .progress img {
+    border-radius: 400px;
+  }
+
+
+@media (max-width: 600px) {
+    .progress img {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+ы
