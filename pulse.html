@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rect {
+  width: 100px;
+  height: 50px;
+  background-color: #333;
+  margin: 10px;
+  transition: transform 1s ease-in-out;
+}
+
+.rect.rotate-left {
+  transform-origin: 50% 100%;
+  transform: rotate(-45deg) translateX(-150px);
+}
+
+.rect.rotate-right {
+  transform-origin: 50% 100%;
+  transform: rotate(45deg) translateX(150px);
+}
+
+.rect.move-left {
+  transform: translateX(-200px);
+}
+
+.rect.move-right {
+  transform: translateX(200px);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="rect"></div>
+  <div class="rect"></div>
+  <div class="rect"></div>
+  <div class="rect"></div>
+</div>
+
+<script>
+  const rects = document.querySelectorAll('.rect');
+
+  // Первая анимация: наклоняются и разъезжаются
+  setTimeout(() => {
+    rects[0].classList.add('rotate-left', 'move-left');
+    rects[1].classList.add('rotate-right', 'move-right');
+  }, 1000);
+
+  // Вторая анимация: следующие две разъезжаются
+  setTimeout(() => {
+    rects[2].classList.add('rotate-left', 'move-left');
+    rects[3].classList.add('rotate-right', 'move-right');
+  }, 2000);
+
+  // Третья анимация: все выравниваются в линию
+  setTimeout(() => {
+    rects.forEach(rect => {
+      rect.classList.remove('rotate-left', 'rotate-right');
+      rect.classList.remove('move-left', 'move-right');
+    });
+    rects[0].style.transform = 'translateX(-300px)';
+    rects[1].style.transform = 'translateX(-100px)';
+    rects[2].style.transform = 'translateX(100px)';
+    rects[3].style.transform = 'translateX(300px)';
+  }, 3000);
+</script>
+
+</body>
+</html>
