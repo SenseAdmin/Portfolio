@@ -9,21 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="img/head-img.png">
-    
+
 </head>
 <body>
 
     <script src="script.js"></script>
 
     <div class="loading-overlay">
-       
+
 
             <div class="progress">
                 <div class="progressBar"></div>
                 <img src="https://media1.tenor.com/m/BZaWjKzYBLQAAAAd/racoon-raccoon.gif" alt="GIF Animation" class="gifImage">
             </div>
-        
-        
+
+
     </div>
 
 
@@ -80,32 +80,29 @@
                 <p class="predloz-text item">сочетаем проверенные стратегии, глубокую аналитику и креативные концепции, художественный подход, нестандартные решения</p>
                 <script>
                     const items = document.querySelectorAll('.item');
-                
+
                     const isInViewport = (element) => {
-                      const rect = element.getBoundingClientRect();
-                      return (
-                        rect.top >= 0 &&
-                        rect.left >= 0 &&
-                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                      );
+                    const rect = element.getBoundingClientRect();
+                    return (
+                        (rect.top >= 0 && rect.top <= window.innerHeight) ||
+                        (rect.bottom >= 0 && rect.bottom <= window.innerHeight)
+                    );
                     };
-                
+
                     const handleScroll = () => {
-                      items.forEach((item, index) => {
+                    items.forEach((item, index) => {
                         if (isInViewport(item)) {
-                          // Задержка для каждого элемента
-                          setTimeout(() => {
+                        setTimeout(() => {
                             item.classList.add('show');
-                          }, index * 500); // 500 мс задержки для каждого элемента
+                        }, index * 250);
                         }
-                      });
+                    });
                     };
-                
+
                     window.addEventListener('scroll', handleScroll);
-                
-                    // Запускаем анимацию при загрузке страницы
+
                     handleScroll();
+
                   </script>
             </div>
         </div>
@@ -115,7 +112,7 @@
                     <h1>Этапы процесса</h1>
                 </div>
                 <div class="stage-container">
-                    <div class="stage stage1">
+                    <div class="stage stage1 rect">
                         <h1 class="stage-title">Discovery</h1>
                         <a class="stage-inner" href="discovery.html">
                             <p class="stage-text">Погружаемся в проект, исследуем потребности аудитории, проводим конкурентный анализ</p>
@@ -123,7 +120,7 @@
                             <img class="stage-icon" src="img/stage-icon.png" alt="">
                         </a>
                     </div>
-                    <div class="stage stage2">
+                    <div class="stage stage2 rect">
                         <h1 class="stage-title">UserFlow</h1>
                         <a class="stage-inner" href="userflow.html">
                             <p class="stage-text">Прорабатываем пользовательские сценарии</p>
@@ -131,7 +128,7 @@
                             <img class="stage-icon" src="img/stage-icon.png" alt="">
                         </a>
                     </div>
-                    <div class="stage stage3">
+                    <div class="stage stage3 rect">
                         <h1 class="stage-title">Концепт</h1>
                         <a class="stage-inner" href="concept.html">
                             <p class="stage-text">Прорабатываем визуальную концепцию на примере пары основных экранов приложения</p>
@@ -139,7 +136,7 @@
                             <img class="stage-icon" src="img/stage-icon.png" alt="">
                         </a>
                     </div>
-                    <div class="stage stage4">
+                    <div class="stage stage4 rect">
                         <h1 class="stage-title">Все экраны</h1>
                         <a class="stage-inner" href="alldecktop.html">
                             <p class="stage-text">Финальный дизайн экранов, который отображает функционльности, а также все визуальные детали</p>
@@ -147,6 +144,74 @@
                             <img class="stage-icon" src="img/stage-icon.png" alt="">
                         </a>
                     </div>
+                    <script>
+
+                        const rects = document.querySelectorAll('.rect');
+
+                        // Функция для анимации при ширине экрана больше 1240px
+                        function animateLargeScreen() {
+                            // Ваш скрипт для больших экранов
+                            // Первая анимация: наклоняются и разъезжаются
+                            setTimeout(() => {
+                                rects[0].classList.add('rotate-left', 'move-left');
+                                rects[1].classList.add('rotate-right', 'move-right');
+                            }, 1000);
+
+                            // Вторая анимация: следующие две разъезжаются
+                            setTimeout(() => {
+                                rects[2].classList.add('rotate-left', 'move-left');
+                                rects[3].classList.add('rotate-right', 'move-right');
+                            }, 2000);
+
+                            // Третья анимация: все выравниваются в линию
+                            setTimeout(() => {
+                                rects.forEach(rect => {
+                                    rect.classList.remove('rotate-left', 'rotate-right');
+                                    rect.classList.remove('move-left', 'move-right');
+                                });
+                                rects[0].style.transform = 'translateX(0%)';
+                                rects[1].style.transform = 'translateX(102%)';
+                                rects[2].style.transform = 'translateX(205%)';
+                                rects[3].style.transform = 'translateX(308%)';
+                            }, 3000);
+                        }
+
+                        // Функция для анимации при ширине экрана меньше или равной 1240px
+                        function animateSmallScreen() {
+                            // Ваш скрипт для маленьких экранов
+                            // Добавьте здесь анимацию для маленьких экранов
+                            setTimeout(() => {
+                                rects[0].classList.add('rotate-left', 'move-left');
+                                rects[1].classList.add('rotate-right', 'move-right');
+                            }, 500);
+
+                            // Вторая анимация: следующие две разъезжаются
+                            setTimeout(() => {
+                                rects[2].classList.add('rotate-left', 'move-left');
+                                rects[3].classList.add('rotate-right', 'move-right');
+                            }, 1000);
+
+                            // Третья анимация: все выравниваются в линию
+                            setTimeout(() => {
+                                rects.forEach(rect => {
+                                    rect.classList.remove('rotate-left', 'rotate-right');
+                                    rect.classList.remove('move-left', 'move-right');
+                                });
+                                rects[0].style.transform = 'translateX(0%)';
+                                rects[1].style.transform = 'translateX(0%)';
+                                rects[2].style.transform = 'translateX(0%)';
+                                rects[3].style.transform = 'translateX(0%)';
+                            }, 2000);
+                        }
+
+                        // Проверка ширины экрана и вызов соответствующей функции
+                        if (window.innerWidth > 1040) {
+                            animateLargeScreen();
+                        } else {
+                            animateSmallScreen();
+                        }
+
+                      </script>
                 </div><!--./Stage-container-->
             </div><!--./Page-->
         </div><!--./Stages-->
