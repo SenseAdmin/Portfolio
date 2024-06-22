@@ -16,7 +16,7 @@
         <div class="page">
             <div class="header-inner">
 
-                <img src="img/logotip.png" alt="" class="logotip">
+                <img src="img/logotip.png" alt="" class="logotip" onclick="location.href='index.html'">
 
                 <button class="header-btn">
                     <p>НАПИСАТЬ</p>
@@ -30,19 +30,45 @@
 
     <main>
         <div class="page">
-            <h1 class="discovery-title">User Flow</h1>
+            <h1 class="discovery-title item">User Flow</h1>
 
             <div class="text-container">
-                <p class="stag-page-text abzaz1">Wireframe — это карта экранов, которая показывает навигацию между ними и содержит минимальную детализацию. С их помощью описываем информацию о целях экрана и схематично рисуем те элементы, которые планируем там располагать.</p>
-                <p class="stag-page-text abzaz2">Правильное размещение элементов и фичей на экране; ранняя визуализация и возможность получить обратную связь от пользователей.</p>
+                <p class="stag-page-text abzaz1 item">Wireframe — это карта экранов, которая показывает навигацию между ними и содержит минимальную детализацию. С их помощью описываем информацию о целях экрана и схематично рисуем те элементы, которые планируем там располагать.</p>
+                <p class="stag-page-text abzaz2 item">Правильное размещение элементов и фичей на экране; ранняя визуализация и возможность получить обратную связь от пользователей.</p>
             </div>
+            <script>
+                const items = document.querySelectorAll('.item');
+
+                const isInViewport = (element) => {
+                const rect = element.getBoundingClientRect();
+                return (
+                    (rect.top >= 0 && rect.top <= window.innerHeight) ||
+                    (rect.bottom >= 0 && rect.bottom <= window.innerHeight)
+                );
+                };
+
+                const handleScroll = () => {
+                items.forEach((item, index) => {
+                    if (isInViewport(item)) {
+                    setTimeout(() => {
+                        item.classList.add('show');
+                    }, index * 250);
+                    }
+                });
+                };
+
+                window.addEventListener('scroll', handleScroll);
+
+                handleScroll();
+
+              </script>
             <div class="stages">
                 <div class="page">
                     <div class="stages-title">
                         <h1>Этапы процесса</h1>
                     </div>
                     <div class="stage-container">
-                        <div class="stage stage1">
+                        <div class="stage stage1 rect">
                             <h1 class="stage-title">Discovery</h1>
                             <a class="stage-inner" href="discovery.html">
                                 <p class="stage-text">Погружаемся в проект, исследуем потребности аудитории, проводим конкурентный анализ</p>
@@ -50,7 +76,7 @@
                                 <img class="stage-icon" src="img/stage-icon.png" alt="">
                             </a>
                         </div>
-                        <div class="stage stage2">
+                        <div class="stage stage2 rect">
                             <h1 class="stage-title">UserFlow</h1>
                             <a class="stage-inner" href="userflow.html">
                                 <p class="stage-text">Прорабатываем пользовательские сценарии</p>
@@ -58,7 +84,7 @@
                                 <img class="stage-icon" src="img/stage-icon.png" alt="">
                             </a>
                         </div>
-                        <div class="stage stage3">
+                        <div class="stage stage3 rect">
                             <h1 class="stage-title">Концепт</h1>
                             <a class="stage-inner" href="concept.html">
                                 <p class="stage-text">Прорабатываем визуальную концепцию на примере пары основных экранов приложения</p>
@@ -66,7 +92,7 @@
                                 <img class="stage-icon" src="img/stage-icon.png" alt="">
                             </a>
                         </div>
-                        <div class="stage stage4">
+                        <div class="stage stage4 rect">
                             <h1 class="stage-title">Все экраны</h1>
                             <a class="stage-inner" href="alldecktop.html">
                                 <p class="stage-text">Финальный дизайн экранов, который отображает функционльности, а также все визуальные детали</p>
@@ -74,6 +100,74 @@
                                 <img class="stage-icon" src="img/stage-icon.png" alt="">
                             </a>
                         </div>
+                        <script>
+
+                            const rects = document.querySelectorAll('.rect');
+
+                            // Функция для анимации при ширине экрана больше 1240px
+                            function animateLargeScreen() {
+                                // Ваш скрипт для больших экранов
+                                // Первая анимация: наклоняются и разъезжаются
+                                setTimeout(() => {
+                                    rects[0].classList.add('rotate-left', 'move-left');
+                                    rects[1].classList.add('rotate-right', 'move-right');
+                                }, 1000);
+
+                                // Вторая анимация: следующие две разъезжаются
+                                setTimeout(() => {
+                                    rects[2].classList.add('rotate-left', 'move-left');
+                                    rects[3].classList.add('rotate-right', 'move-right');
+                                }, 2000);
+
+                                // Третья анимация: все выравниваются в линию
+                                setTimeout(() => {
+                                    rects.forEach(rect => {
+                                        rect.classList.remove('rotate-left', 'rotate-right');
+                                        rect.classList.remove('move-left', 'move-right');
+                                    });
+                                    rects[0].style.transform = 'translateX(0%)';
+                                    rects[1].style.transform = 'translateX(102%)';
+                                    rects[2].style.transform = 'translateX(205%)';
+                                    rects[3].style.transform = 'translateX(308%)';
+                                }, 3000);
+                            }
+
+                            // Функция для анимации при ширине экрана меньше или равной 1240px
+                            function animateSmallScreen() {
+                                // Ваш скрипт для маленьких экранов
+                                // Добавьте здесь анимацию для маленьких экранов
+                                setTimeout(() => {
+                                    rects[0].classList.add('rotate-left', 'move-left');
+                                    rects[1].classList.add('rotate-right', 'move-right');
+                                }, 500);
+
+                                // Вторая анимация: следующие две разъезжаются
+                                setTimeout(() => {
+                                    rects[2].classList.add('rotate-left', 'move-left');
+                                    rects[3].classList.add('rotate-right', 'move-right');
+                                }, 1000);
+
+                                // Третья анимация: все выравниваются в линию
+                                setTimeout(() => {
+                                    rects.forEach(rect => {
+                                        rect.classList.remove('rotate-left', 'rotate-right');
+                                        rect.classList.remove('move-left', 'move-right');
+                                    });
+                                    rects[0].style.transform = 'translateX(0%)';
+                                    rects[1].style.transform = 'translateX(0%)';
+                                    rects[2].style.transform = 'translateX(0%)';
+                                    rects[3].style.transform = 'translateX(0%)';
+                                }, 2000);
+                            }
+
+                            // Проверка ширины экрана и вызов соответствующей функции
+                            if (window.innerWidth > 1040) {
+                                animateLargeScreen();
+                            } else {
+                                animateSmallScreen();
+                            }
+
+                          </script>
                     </div><!--./Stage-container-->
                 </div><!--./Page-->
             </div><!--./Stages-->
