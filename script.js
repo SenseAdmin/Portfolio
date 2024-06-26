@@ -1,24 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Запретить скроллинг при показе loading overlay
-  function disableScroll() {
-    document.body.style.overflow = 'hidden';
-  }
+window.addEventListener('load', function() {
+  const loaderWrapper = document.getElementById('loader-wrapper');
+  const content = document.getElementById('content');
 
-  // Разрешить скроллинг после скрытия loading overlay
-  function enableScroll() {
-    document.body.style.overflow = 'auto';
-  }
+  loaderWrapper.style.display = 'flex';
+  content.style.display = 'block';
 
-  // Показать загрузочный overlay при загрузке страницы
-  document.querySelector('.loading-overlay').style.display = 'flex';
-  disableScroll();
-
-  // Скрыть загрузочный overlay через 5 секунд
   setTimeout(function() {
-    document.querySelector('.loading-overlay').style.display = 'none';
-    enableScroll();
-  }, 5000); // 5 second delay
+    loaderWrapper.style.display = 'none';
+  }, 5000);
 });
 
 
+window.addEventListener('load', function() {
+  const counterRightElement = document.getElementById('counter-right');
 
+  let counterRight = 1;
+
+  const counterInterval = setInterval(function() {
+    counterRightElement.textContent = String(counterRight).padStart(2, '0');
+
+    counterRight++;
+    if (counterRight > 99) {
+      clearInterval(counterInterval);
+    }
+  }, 20);
+});
