@@ -16,6 +16,84 @@ body {
     background-color: #020202;
 }
 
+
+
+
+
+/* Анимация появления
+*/
+
+body {
+    background-color: #020202;
+    margin: 0;
+    padding: 0;
+  }
+
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loader-wrapper-animation 3s 2s ease-in-out forwards;
+  }
+
+  #loader {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  @keyframes loader-wrapper-animation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  #counter-wrapper {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    font-size: 90px;
+    font-weight: bold;
+    color: #000;
+    animation: counter-animation 2s linear forwards;
+  }
+
+  #counter-right {
+    padding: 0 10px;
+  }
+
+  @keyframes counter-animation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(85%);
+    }
+  }
+
+
+
+/* Анимация появления
+*/
+
+
+
+
+
+
 .page {
     width: calc( 100% - 80px);
     margin: 0 auto;
@@ -115,10 +193,26 @@ body {
     width: 100%;
     height: auto;
     margin-top: 50px;
+    padding: 170px;
 }
 
-.disign img {
-    width: 100%;
+.doit,
+.more {
+    color: #fff;
+    display: block;
+    width: 60%;
+    text-align: justify;
+    text-transform: uppercase;
+    font-size: 136px;
+    font-weight: 900;
+}
+
+.doit {
+    margin-right: auto;
+}
+
+.more {
+    margin-left: auto;
 }
 
 .predloz {
