@@ -15,18 +15,6 @@
 
     <script src="script.js"></script>
 
-    <div class="loading-overlay">
-
-
-            <div class="progress">
-                <div class="progressBar"></div>
-                <img src="https://media1.tenor.com/m/BZaWjKzYBLQAAAAd/racoon-raccoon.gif" alt="GIF Animation" class="gifImage">
-            </div>
-
-
-    </div>
-
-
     <header class="header">
         <div class="page">
             <div class="header-inner">
@@ -43,7 +31,19 @@
         </div>
     </header>
 
-    <main>
+    <main id="content">
+
+        <div id="loader-wrapper">
+            <div id="loader">
+
+                <div id="counter-wrapper">
+                    <span id="counter-right">01</span>%
+                  </div>
+
+            </div>
+          </div>
+
+
         <div class="page">
             <div class="title">
                 <div class="opisanie">
@@ -54,7 +54,10 @@
                     <button class="opisanie-button">Заказать дизайн</button>
                 </div>
                 <div class="disign">
-                    <img src="img/KRAY..svg" alt="">
+                    <p class="doit">Делаем</p>
+                    <p class="more">БЫСТРО</p>
+                    <p class="more">ЛОГО</p>
+                    <p class="more">ДИЗАЙН</p>
                 </div>
             </div>
             <div class="predloz">
@@ -109,7 +112,7 @@
         <div class="stages">
             <div class="page">
                 <div class="stages-title">
-                    <h1>Этапы процесса</h1>
+                    <h1 id="stage-title-id">Этапы процесса</h1>
                 </div>
                 <div class="stage-container">
                     <div class="stage stage1 rect">
@@ -146,7 +149,25 @@
                     </div>
                     <script>
 
-                        const rects = document.querySelectorAll('.rect');
+                        // Определяем функцию, которая будет проверять, виден ли элемент на экране
+                        function isElementInViewport(el) {
+                            var rect = el.getBoundingClientRect();
+                            return (
+                                rect.top >= 0 &&
+                                rect.left >= 0 &&
+                                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                            );
+                        }
+
+                        // Находим нужный элемент
+                        var element = document.getElementById('stage-title-id');
+
+                        // Определяем функцию, которая будет запускать ваш скрипт, когда элемент будет виден
+                        function onVisibilityChange() {
+                            if (isElementInViewport(element)) {
+                                // Ваш скрипт здесь
+                                const rects = document.querySelectorAll('.rect');
 
                         // Функция для анимации при ширине экрана больше 1240px
                         function animateLargeScreen() {
@@ -210,6 +231,14 @@
                         } else {
                             animateSmallScreen();
                         }
+                            }
+                        }
+
+                        // Добавляем обработчик события прокрутки страницы
+                        window.addEventListener('scroll', onVisibilityChange);
+
+                        // Запускаем проверку на видимость при загрузке страницы
+                        onVisibilityChange();
 
                       </script>
                 </div><!--./Stage-container-->
