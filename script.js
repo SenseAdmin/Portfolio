@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const element1 = document.getElementById('1');
   const element2 = document.getElementById('2');
   const element3 = document.getElementById('3');
+  const element4 = document.getElementById('4');
+  const element5 = document.getElementById('5');
 
   setTimeout(() => {
     element1.classList.add('open');
@@ -41,9 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
           element2.classList.remove('open');
           setTimeout(() => {
             element3.classList.add('open');
+            setTimeout(() => {
+              element3.classList.remove('open');
+              setTimeout(() => {
+                element4.classList.add('open');
+                setTimeout(() => {
+                  element4.classList.remove('open');
+                    setTimeout(() => {
+                    element5.classList.add('open');
+                  }, 2000);
+                }, 2000);
+              }, 1000);
+            }, 2000);
           }, 1000);
         }, 2000);
       }, 1000);
-    }, 3000);
+    }, 1000);
   }, 3500);
 });
