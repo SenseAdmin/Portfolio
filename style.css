@@ -112,6 +112,10 @@ body {
     width: 100%;
 }
 
+.burger {
+    display: none;
+}
+
 .header-inner {
     display: flex;
     align-items: center;
@@ -124,18 +128,16 @@ body {
 }
 
 .header-btn {
-    width: 180px;
-    height: 55px;
+    width: 145px;
+    height: 50px;
     padding: 0 28px;
-
     border: none;
     border-radius: 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     background-color: #2C2C2C;
+    position: fixed;
+    z-index: 999;
+    bottom: 25px;
+    right: 40px;
 }
 
 .header-btn p {
@@ -146,11 +148,30 @@ body {
     margin-top: 1px;
 }
 
-.header-btn img {
-    width: 23px;
-    height: 23px;
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 25px;
 }
 
+.Navigation a.nav-link:last-child {
+    margin: 0;
+}
+
+.telegram,
+.email {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 25px;
+}
+
+.class a.email {
+    margin: 0;
+}
 
 /* Main
 ====================================================*/
@@ -168,7 +189,7 @@ body {
 
 .opisanie-text {
     width: auto;
-    max-width: 51%;
+    max-width: 65%;
     color: #fff;
     font-size: 20px;
     font-weight: 400;
@@ -176,15 +197,13 @@ body {
 
 .opisanie-button {
     position: relative;
-
-    padding: 2.3%;
+    padding: 2% 5%;
     color: #fff;
-    font-size: calc( 16px + 4 * (100vw / 1440));
+
+    font-size: 20px;
     font-weight: 500;
-
-    border: #fff 1px solid;
+    border: rgba(255, 255, 255, .6) 1px solid;
     border-radius: 14px;
-
     background: none;
 }
 
@@ -199,7 +218,7 @@ body {
     width: 100%;
     height: auto;
     margin-top: 50px;
-    padding: 170px;
+    padding: 4%;
     padding-top: 0;
 }
 
@@ -207,7 +226,7 @@ body {
 .more {
     color: #fff;
     display: block;
-    width: 60%;
+    width: auto;
     text-align: justify;
     text-transform: uppercase;
     font-size: 136px;
@@ -227,7 +246,7 @@ body {
     height: 0;
     text-align: left;
     width: auto;
-    right: 170px;
+    right: 4%;
 }
 
 .more.open {
@@ -240,7 +259,7 @@ body {
     width: auto;
     max-width: 785px;
     margin-left: auto;
-    margin-top: 55px;
+    margin-top: 170px;
     color: #fff;
 }
 
@@ -583,6 +602,10 @@ body {
 }
 
 @media (max-width: 1040px) {
+    .opisanie {
+        width: 75%;
+    }
+
     .stage-container {
         height: 856px;
     }
@@ -611,6 +634,14 @@ body {
 
 @media (max-width: 1000px) {
     .line {
+        display: none;
+    }
+}
+
+@media (max-width: 910px) {
+    .Navigation,
+    .calls,
+    .header-btn {
         display: none;
     }
 }
