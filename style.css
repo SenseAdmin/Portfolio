@@ -190,10 +190,12 @@ body {
 }
 
 .disign {
+    position: relative;
     width: 100%;
     height: auto;
     margin-top: 50px;
     padding: 170px;
+    padding-top: 0;
 }
 
 .doit,
@@ -212,7 +214,22 @@ body {
 }
 
 .more {
+    visibility: hidden;
+    opacity: 0;
     margin-left: auto;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    height: 0;
+    text-align: left;
+    width: auto;
+    right: 170px;
+}
+
+.more.open {
+    visibility: visible;
+    opacity: 1;
+    bottom: 5px;
+    height: auto;
 }
 
 .predloz {
