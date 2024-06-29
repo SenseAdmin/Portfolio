@@ -25,3 +25,25 @@ window.addEventListener('load', function() {
     }
   }, 20);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const element1 = document.getElementById('1');
+  const element2 = document.getElementById('2');
+  const element3 = document.getElementById('3');
+
+  setTimeout(() => {
+    element1.classList.add('open');
+    setTimeout(() => {
+      element1.classList.remove('open');
+      setTimeout(() => {
+        element2.classList.add('open');
+        setTimeout(() => {
+          element2.classList.remove('open');
+          setTimeout(() => {
+            element3.classList.add('open');
+          }, 1000);
+        }, 2000);
+      }, 1000);
+    }, 3000);
+  }, 3500);
+});
