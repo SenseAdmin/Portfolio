@@ -17,6 +17,11 @@ body {
 }
 
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
 
 
 
@@ -228,7 +233,6 @@ body {
 .more.open {
     visibility: visible;
     opacity: 1;
-    bottom: 5px;
     height: auto;
 }
 
@@ -236,7 +240,7 @@ body {
     width: auto;
     max-width: 785px;
     margin-left: auto;
-    margin-top: 225px;
+    margin-top: 55px;
     color: #fff;
 }
 
