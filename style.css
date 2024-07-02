@@ -8,7 +8,12 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
@@ -114,7 +119,141 @@ body {
 
 .burger {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
+
+.burger.open {
+    display: block;
+}
+
+.burger-inner {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    background-color: rgba(217, 217, 217, 1);
+    padding: 110px 12px 0 12px;
+    transition: right 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.burger.open .burger-inner.open {
+    right: 0;
+}
+
+.burger-inner .Navigation {
+    position: relative;
+    display: block;
+}
+
+.burger-inner .Navigation::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    bottom: -35px;
+
+    background-color: #000;
+}
+
+.burger-inner .Navigation .nav-link {
+    color: #2C2C2C;
+    font-size: 48px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.burger-inner .calls {
+    display: block;
+    margin-top: 50px;
+}
+
+.burger-inner .calls .telegram,
+.burger-inner .calls .email {
+    display: block;
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.burger-button {
+    z-index: 101;
+    display: none;
+    width: 40px;
+    height: 30px;
+    position: relative;
+
+    background: inherit;
+
+    border: none;
+    transition: all 2s;
+}
+
+.burger-button-inner1,
+.burger-button-inner3 {
+    transition: all 2s;
+}
+
+.burger-button-inner1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+
+    background-color: #fff;
+}
+
+.burger-button-inner2::after {
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+
+    background-color: #fff;
+}
+
+.burger-button-inner3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+
+    background-color: #fff;
+}
+
+.burger-button-inner1.open {
+    transform: rotate(45deg) translateX(-5px);
+}
+
+.burger-button-inner1.open::after {
+    background-color: #000;
+}
+
+.burger-button-inner2.open {
+    display: none;
+}
+
+.burger-button-inner3.open {
+    transform: rotate(315deg) translateX(-5px);
+}
+
+.burger-button-inner3.open::after {
+    background-color: #000;
+}
+
+
 
 .header-inner {
     display: flex;
@@ -125,6 +264,7 @@ body {
 .logotip {
     width: 122px;
     height: 24px;
+    z-index: 101;
 }
 
 .header-btn {
@@ -229,7 +369,7 @@ body {
     width: auto;
     text-align: justify;
     text-transform: uppercase;
-    font-size: 136px;
+    font-size: calc(48px + 88 * (100vw / 1440));
     font-weight: 900;
 }
 
@@ -639,10 +779,26 @@ body {
 }
 
 @media (max-width: 910px) {
+    .page {
+        width: calc(100% - 24px);
+    }
+
+    .burger-button {
+        display: block;
+    }
+
     .Navigation,
     .calls,
     .header-btn {
         display: none;
+    }
+
+    .disign {
+        padding: 0;
+    }
+
+    .more {
+        right: 0;
     }
 }
 
@@ -707,6 +863,10 @@ body {
     .project {
         width: 90%;
         margin-bottom: 3%;
+    }
+
+    .disign {
+        min-height: 140px;
     }
 }
 
@@ -819,6 +979,7 @@ body {
     background: rgba(255, 255, 255, 1);
     display: flex;
     z-index: 9999;
+    overflow: hidden;
   }
 
   .loader {
