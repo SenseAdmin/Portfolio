@@ -61,3 +61,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   }, 3500);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const burgerBtn = document.getElementById('burger-btn');
+  const burger = document.querySelector('.burger');
+  const burgerInner = document.querySelector('.burger-inner');
+  const burgerButtonInner1 = document.querySelector('.burger-button-inner1');
+  const burgerButtonInner2 = document.querySelector('.burger-button-inner2');
+  const burgerButtonInner3 = document.querySelector('.burger-button-inner3');
+  const logo = document.getElementById('logo');
+
+  burgerBtn.addEventListener('click', function() {
+    if (burger.classList.contains('open')) {
+      burger.classList.remove('open');
+      burgerInner.classList.remove('open');
+      burgerButtonInner1.classList.remove('open');
+      burgerButtonInner2.classList.remove('open');
+      burgerButtonInner3.classList.remove('open');
+      logo.style.filter = 'none';
+    } else {
+      burger.classList.add('open');
+      burgerInner.classList.add('open');
+      burgerButtonInner1.classList.add('open');
+      burgerButtonInner2.classList.add('open');
+      burgerButtonInner3.classList.add('open');
+      logo.style.filter = 'invert(100%)';
+    }
+  });
+});
