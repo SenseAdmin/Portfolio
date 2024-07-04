@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function() {
   const burgerBtn = document.getElementById('burger-btn');
   const burger = document.querySelector('.burger');
+  const headerBtnContainer = document.querySelector('.header-btn-container');
   const burgerInner = document.querySelector('.burger-inner');
   const burgerButtonInner1 = document.querySelector('.burger-button-inner1');
   const burgerButtonInner2 = document.querySelector('.burger-button-inner2');
@@ -87,6 +88,36 @@ document.addEventListener('DOMContentLoaded', function() {
       burgerButtonInner2.classList.add('open');
       burgerButtonInner3.classList.add('open');
       logo.style.filter = 'invert(100%)';
+      headerBtnContainer.style.background = '#c2c2c2';
     }
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const headerBtn = document.getElementById('header-btn');
+  const headerBtnCont = document.getElementById('header-btn-cont');
+
+  headerBtn.addEventListener('click', function() {
+    if (headerBtnCont.classList.contains('open')) {
+      headerBtnCont.classList.remove('open');
+    } else {
+      headerBtnCont.classList.add('open');
+      headerBtn.style.display = 'none';
+    }
+  })
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  const headerBtn = document.getElementById('header-btn-mobile');
+  const headerBtnCont = document.getElementById('header-btn-cont');
+
+  headerBtn.addEventListener('click', function() {
+    if (headerBtnCont.classList.contains('open')) {
+      headerBtnCont.classList.remove('open');
+    } else {
+      headerBtnCont.classList.add('open');
+      headerBtn.style.display = 'none';
+    }
+  })
+})
