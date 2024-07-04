@@ -839,7 +839,7 @@ body {
 
     .header-btn-container {
         position: fixed;
-        padding: 25px;
+        padding: 28px 25px;
         bottom: -1px;
         left: 0;
         width: 100%;
