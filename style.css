@@ -970,15 +970,9 @@ body {
         margin-top: 80px;
     }
 
-    .vibor {
-        overflow-x: scroll;
-        overflow-y: hidden;
+    .app, .site, .lending {
+        padding: 7px 10px;
     }
-
-    .vibor::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
 
       /* Скрывает скроллбар-трек веб-кит */
     .vibor::-webkit-scrollbar-track {
