@@ -20,16 +20,18 @@ window.addEventListener('load', function() {
     counterRightElement.textContent = String(counterRight).padStart(2, '0');
 
     counterRight++;
-    if (counterRight > 99) {
+    if (counterRight > 100) {
       clearInterval(counterInterval);
     }
   }, 20);
 });
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const element1 = document.getElementById('1');
-  const element2 = document.getElementById('2');
-  const element3 = document.getElementById('3');
+  const element2 = document.getElementById('f');
+  const element3 = document.getElementById('g');
   const element4 = document.getElementById('4');
   const element5 = document.getElementById('5');
 
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
       burgerButtonInner2.classList.remove('open');
       burgerButtonInner3.classList.remove('open');
       logo.style.filter = 'none';
+      headerBtnContainer.style.background = '#000';
     } else {
       burger.classList.add('open');
       burgerInner.classList.add('open');
@@ -88,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
       burgerButtonInner2.classList.add('open');
       burgerButtonInner3.classList.add('open');
       logo.style.filter = 'invert(100%)';
-      headerBtnContainer.style.background = '#c2c2c2';
+      headerBtnContainer.style.background = 'none';
     }
   });
 });
