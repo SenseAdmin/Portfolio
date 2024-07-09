@@ -80,16 +80,13 @@ body {
     animation: counter-animation 2s linear forwards;
   }
 
-  #counter-right {
-    padding: 0 10px;
-  }
 
   @keyframes counter-animation {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(85%);
+      transform: translateX(80%);
     }
   }
 
@@ -163,6 +160,7 @@ body {
     color: #2C2C2C;
     font-size: 48px;
     font-weight: 700;
+    font-family: "TT Travels";
     display: block;
     margin-bottom: 8px;
 }
@@ -302,7 +300,6 @@ body {
     z-index: 9999;
     bottom: 20px;
     right: -400px;
-    background: #2c2c2c;
     border-radius: 15px;
     width: 265px;
     height: 60px;
@@ -355,10 +352,10 @@ body {
 }
 
 .opisanie {
-    width: 60%;
+    width: 100%;
 
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: space-between;
 }
 
@@ -370,16 +367,12 @@ body {
     font-weight: 400;
 }
 
-.opisanie-button {
-    position: relative;
-    padding: 2% 5%;
-    color: #fff;
+.slideshow {
+    width: 650px;
+    height: 320px;
 
-    font-size: 20px;
-    font-weight: 500;
-    border: rgba(255, 255, 255, .6) 1px solid;
-    border-radius: 14px;
-    background: none;
+    border-radius: 30px;
+    background-color: #fff;
 }
 
 .line {
@@ -393,7 +386,6 @@ body {
     width: 100%;
     height: auto;
     margin-top: 50px;
-    padding: 4%;
     padding-top: 0;
 }
 
@@ -404,8 +396,9 @@ body {
     width: auto;
     text-align: justify;
     text-transform: uppercase;
-    font-size: calc(48px + 88 * (100vw / 1440));
-    font-weight: 900;
+    font-family: 'TT Travels';
+    font-size: calc(40px + 112 * (100vw / 1440));
+    font-weight: 800;
 }
 
 .doit {
@@ -419,9 +412,17 @@ body {
     transition: all .5s ease-in-out;
     position: absolute;
     height: 0;
-    text-align: left;
     width: auto;
-    right: 4%;
+    right: 0%;
+    top: 130px;
+}
+
+#f {
+    right: 20%;
+}
+
+#g {
+    right: 9%;
 }
 
 .more.open {
@@ -476,6 +477,7 @@ body {
 .predloz-title {
     font-size: 48px;
     font-weight: 800;
+    font-family: 'TT Travels';
     margin-top: 60px;
 }
 
@@ -599,6 +601,7 @@ body {
 .projects-title {
     font-size: 36px;
     font-weight: 800;
+    font-family: 'TT Travels';
     text-align: center;
     margin-bottom: 60px;
 }
@@ -777,10 +780,6 @@ body {
 }
 
 @media (max-width: 1040px) {
-    .opisanie {
-        width: 75%;
-    }
-
     .stage-container {
         height: 856px;
     }
@@ -814,6 +813,10 @@ body {
 }
 
 @media (max-width: 910px) {
+    .stage-inner {
+        opacity: 1;
+    }
+
     .page {
         width: calc(100% - 24px);
     }
@@ -833,6 +836,14 @@ body {
     }
 
     .more {
+        right: 0;
+    }
+
+    #f {
+        right: 10%;
+    }
+
+    #g {
         right: 0;
     }
 
@@ -876,16 +887,11 @@ body {
         padding: 0;
         position: static;
         width: 100%;
-        background-color: #020202;
     }
 
 }
 
 @media (max-width: 850px) {
-    .opisanie {
-        width: 75%;
-    }
-
     .project {
         width: 80%;
         margin-bottom: 3%;
@@ -907,13 +913,18 @@ body {
         width: 100%;
         margin-bottom: 16px;
     }
+
+    @keyframes counter-animation {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(60%);
+        }
+      }
 }
 
 @media (max-width: 650px) {
-    .opisanie {
-        width: 85%;
-    }
-
     .stage-container {
         height: 1775px;
     }
@@ -946,6 +957,18 @@ body {
 
     .disign {
         min-height: 140px;
+    }
+
+    .more {
+        top: 100px;
+    }
+
+    #f {
+        right: 0;
+    }
+
+    .predloz {
+        margin-top: 100px;
     }
 }
 
@@ -1032,6 +1055,15 @@ body {
         font-size: 16px;
         padding: 18px 19px;
     }
+
+    @keyframes counter-animation {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(50%);
+        }
+      }
 }
 
 
