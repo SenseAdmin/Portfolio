@@ -124,3 +124,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 })
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slideshow = document.getElementById('slideshow');
+  const slides = [
+    { path: 'img/slide1.png', position: 'bottom -25px left 0' },
+    { path: 'img/slide2.png', position: 'bottom 0px left 5px' },
+    { path: 'img/slide3.png', position: 'bottom 0 left 0' },
+    { path: 'img/slide7.png', position: 'bottom 0 left -10px' },
+    { path: 'img/slide5.png', position: 'bottom 0 left 0' },
+    { path: 'img/slide6.png', position: 'bottom 0 left 0' }
+  ];
+
+  let currentSlide = 0;
+
+  function changeSlide() {
+    slideshow.style.opacity = 0; // Затухание
+    setTimeout(function() {
+      slideshow.style.background = `url(${slides[currentSlide].path}) ${slides[currentSlide].position} no-repeat`;
+      slideshow.style.backgroundSize = 'cover'; // Уменьшение изображения чтобы поместилось в блок
+      slideshow.style.transition = "opacity 1.5s, background-size 0.5s"; // Переход для плавного изменения прозрачности и размера фона
+      slideshow.style.opacity = 1; // Появление нового слайда после затухания
+    }, 500); // Задержка после затухания
+    currentSlide = (currentSlide + 1) % slides.length; // Обновляем индекс слайда, чтобы зациклить слайды
+  }
+
+  changeSlide(); // Показываем первый слайд сразу
+
+  setInterval(changeSlide, 5500); // Меняем слайд каждые 5.5 секунд
+});
+
+
