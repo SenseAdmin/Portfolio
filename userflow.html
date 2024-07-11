@@ -12,17 +12,61 @@
 </head>
 <body>
 
+
+    <script src="script.js"></script>
+
     <header class="header">
         <div class="page">
             <div class="header-inner">
 
-                <img src="img/logotip.png" alt="" class="logotip" onclick="location.href='index.html'">
+                <img src="img/logotip.png" alt="" class="logotip" onclick="location='index.html'" id="logo">
 
-                <button class="header-btn">
-                    <p>НАПИСАТЬ</p>
+                <nav class="Navigation">
+                    <a href="index.html#projects" class="nav-link">Проекты</a>
+                    <a href="#stages" class="nav-link">Этапы</a>
+                    <a href="index.html#item" class="nav-link">Наши ценности</a>
+                </nav>
 
-                    <img src="img/button-img.png" alt="" class="button-img">
+                <div class="calls">
+                    <a class="telegram" href="https://t.me/zKATAHA">Telegram</a>
+                    <a class="email" href="">Email</a>
+                </div>
+
+                <div class="header-btn-container">
+                    <button class="header-btn" id="header-btn">
+                        <p>НАПИСАТЬ</p>
+                    </button>
+                    <button class="header-btn-mobile" id="header-btn-mobile">
+                        <p>Заказать дизайн</p>
+                    </button>
+                    <div class="header-btn-cont" id="header-btn-cont">
+                        <div class="calls">
+                            <a class="telegram" href="https://t.me/zKATAHA">Telegram</a>
+                            <a class="email" href="">Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="burger-button" id="burger-btn">
+                    <div class="burger-button-inner1"></div>
+                    <div class="burger-button-inner2"></div>
+                    <div class="burger-button-inner3"></div>
                 </button>
+
+                <div class="burger">
+                    <div class="burger-inner">
+                        <nav class="Navigation">
+                            <a href="index.html#projects" class="nav-link">Проекты</a>
+                            <a href="#stages" class="nav-link">Этапы</a>
+                            <a href="index.html#item" class="nav-link">Наши ценности</a>
+                        </nav>
+                        <div class="calls">
+                            <a class="telegram" href="https://t.me/zKATAHA">Telegram</a>
+                            <a class="email" href="">Email</a>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
