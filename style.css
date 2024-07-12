@@ -996,6 +996,11 @@ body {
         width: 100%;
         margin: 0;
     }
+
+    .sense-osn-img,
+    .sense-demo-all {
+        margin-bottom: 5px;
+    }
 }
 
 @media (max-width: 650px) {
