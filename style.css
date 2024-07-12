@@ -253,6 +253,7 @@ body {
 
 
 .header-inner {
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -651,6 +652,24 @@ body {
     background-color: #A1C43B;
 }
 
+.mix_music {
+    background: url(img/mix-music-fon.png) center no-repeat;
+    background-size: cover;
+}
+
+.mix_music .type {
+    background-color: #C746C4;
+}
+
+.fsk {
+    background: url(img/fsk-fon.png) center no-repeat;
+    background-size: cover;
+}
+
+.fsk .type {
+    background-color: #A1C43B;
+}
+
 .project-header {
     display: flex;
     justify-content: space-between;
@@ -808,6 +827,7 @@ body {
 
 .sense-zel-img {
     width: 405px;
+    margin-left: 60px;
 }
 
 .demo {
@@ -820,7 +840,20 @@ body {
     margin-bottom: 35px;
 }
 
+.zel-art {
+    align-items: end;
+}
 
+.art-zel-img {
+    width: 37%;
+    margin-left: 60px;
+}
+
+.art-osn-img,
+.art-demo-all {
+    width: 100%;
+    margin-bottom: 35px;
+}
 
 
 
@@ -995,10 +1028,22 @@ body {
     .sense-zel-img {
         width: 100%;
         margin: 0;
+        margin-top: 35px;
     }
 
     .sense-osn-img,
     .sense-demo-all {
+        margin-bottom: 5px;
+    }
+
+    .art-zel-img {
+        width: 100%;
+        margin: 0;
+        margin-top: 35px;
+    }
+
+    .art-osn-img,
+    .art-demo-all {
         margin-bottom: 5px;
     }
 }
