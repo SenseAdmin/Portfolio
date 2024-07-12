@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentSlide = 0;
 
   function changeSlide() {
-    slideshow.style.opacity = 'none'; // Затухание
+    slideshow.style.opacity = '0.1'; // Затухание
     setTimeout(function() {
       slideshow.style.background = `url(${slides[currentSlide].path}) ${slides[currentSlide].position} no-repeat`;
       slideshow.style.backgroundSize = 'cover'; // Уменьшение изображения чтобы поместилось в блок
