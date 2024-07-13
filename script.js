@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
       burgerButtonInner2.classList.remove('open');
       burgerButtonInner3.classList.remove('open');
       logo.style.filter = 'none';
+      logo.style.position = 'relative';
+      burgerBtn.style.position = 'relative';
+      burgerBtn.style.right = '12px';
       headerBtnContainer.style.background = '#000';
     } else {
       burger.classList.add('open');
@@ -91,11 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
       burgerButtonInner2.classList.add('open');
       burgerButtonInner3.classList.add('open');
       logo.style.filter = 'invert(100%)';
+      logo.style.position = 'fixed';
+      burgerBtn.style.position = 'fixed';
+      burgerBtn.style.right = '12px';
       headerBtnContainer.style.background = 'none';
     }
   });
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
   const headerBtn = document.getElementById('header-btn');
